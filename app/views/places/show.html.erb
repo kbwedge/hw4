@@ -1,3 +1,4 @@
+<% if @current_user %>
 <h1><%= @place.name %></h1>
 
 <p>
@@ -16,3 +17,6 @@
   <p><%= post.description %></p>
 <% end %>
 </ul>
+<% else %>
+  You must <a href="/sessions/new">login</a> first.
+<% end %>

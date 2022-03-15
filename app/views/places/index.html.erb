@@ -1,11 +1,15 @@
+<% if @current_user %>
 <h1>Places</h1>
-
 <p>
   <a href="/places/new/" class="btn btn-success">New Place</a>
 </p>
 
 <p>
+
   <% for place in @places %>
     <p><a href="/places/<%= place.id %>"><%= place.name %></a></p>
   <% end %>
 </p>
+<% else %>
+  You must <a href="/sessions/new">login</a> to post.
+<% end %>
